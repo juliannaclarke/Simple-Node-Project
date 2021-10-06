@@ -1,13 +1,17 @@
+
+//setting up the app to use express and listen on port 9001
 const express = require('express');
 const app = express();
 const port = 9001;
 
 app.get('/', (req, res) => {
+    //request at the entrance to the server
     res.send("welcome to the server");
 });
 
 app.get("/api/penguins", (req,res) => {
-    //call to db for data
+
+    //call to db for data about penguins
     const penguinFacts = ["Penguins are flightless birds.", 
     "Several species are found in the temperate zone, and one species, the Galápagos penguin, lives near the Equator.", 
     "The largest living species is the emperor penguin.", 
@@ -22,7 +26,8 @@ app.get("/api/penguins", (req,res) => {
 });
 
 app.get("/api/bears", (req,res) => {
-    //call to db for data
+
+    //call to db for data about bears
     const bearFacts = ["Fat Bear Week is an annual celebration of fat bears that runs from Sept. 29 to Oct 5.", 
     "This year's Fat Bear Week Champion is Otis, but personally I think Walker should have taken the cake due to his incredibly fat butt.", 
     "The Koala bear is not really a bear.",
