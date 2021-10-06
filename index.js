@@ -6,7 +6,7 @@ app.get('/', (req, res) => {
     res.send("welcome to the server");
 });
 
-app.get("/api/penguin", (req,res) => {
+app.get("/api/penguins", (req,res) => {
     //call to db for data
     const penguinFacts = ["Penguins are flightless birds.", 
     "Several species are found in the temperate zone, and one species, the Galápagos penguin, lives near the Equator.", 
@@ -19,6 +19,21 @@ app.get("/api/penguin", (req,res) => {
     "Most penguins lay two eggs in a clutch, although the two largest species, the emperor and the king penguins, lay only one.", 
     "Penguins for the most part breed in large colonies, the exceptions being the yellow-eyed and Fiordland species"]
     res.send(JSON.stringify(penguinFacts));
+});
+
+app.get("/api/bears", (req,res) => {
+    //call to db for data
+    const bearFacts = ["Fat Bear Week is an annual celebration of fat bears that runs from Sept. 29 to Oct 5.", 
+    "This year's Fat Bear Week Champion is Otis, but personally I think Walker should have taken the cake due to his incredibly fat butt.", 
+    "The Koala bear is not really a bear.",
+    "Despite their heavy build and awkward gait, they are adept runners, climbers, and swimmers.", 
+    "While the polar bear is mostly carnivorous, and the giant panda feeds almost entirely on bamboo, the remaining six species are omnivorous with varied diets.", 
+    "They may be diurnal or nocturnal and have an excellent sense of smell.", 
+    "The most widespread species is the brown bear, which occurs from Western Europe eastwards through Asia to the western areas of North America.", 
+    "Most bears are opportunistic omnivores and consume more plant than animal matter.", 
+    "In autumn, some bear species forage large amounts of naturally fermented fruits, which affects their behavior.", 
+    "Bears sometimes communicate with visual displays such as standing upright, which exaggerates the individual's size."]
+    res.send(JSON.stringify(bearFacts));
 });
 
 app.listen(port, () => {
